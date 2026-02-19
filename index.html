@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoVision Pro - Real-time Crypto Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">₿</div>
+                    <h1>CryptoVision <span class="pro">PRO</span></h1>
+                </div>
+                <div class="header-controls">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search cryptocurrency..." class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <button id="themeToggle" class="theme-toggle">🌙</button>
+                    <button id="refreshBtn" class="refresh-btn">↻</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="stats-bar">
+                <div class="stat-card">
+                    <div class="stat-label">Total Market Cap</div>
+                    <div class="stat-value" id="totalMarketCap">$0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">24h Volume</div>
+                    <div class="stat-value" id="totalVolume">$0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">BTC Dominance</div>
+                    <div class="stat-value" id="btcDominance">0%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Active Cryptos</div>
+                    <div class="stat-value" id="activeCryptos">0</div>
+                </div>
+            </div>
+
+            <div class="controls-bar">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Coins</button>
+                    <button class="filter-btn" data-filter="favorites">⭐ Favorites</button>
+                    <button class="filter-btn" data-filter="gainers">📈 Top Gainers</button>
+                    <button class="filter-btn" data-filter="losers">📉 Top Losers</button>
+                </div>
+                <div class="sort-controls">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="market_cap">Market Cap</option>
+                        <option value="price">Price</option>
+                        <option value="change">24h Change</option>
+                        <option value="volume">Volume</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="loadingScreen" class="loading-screen">
+                <div class="loader"></div>
+                <p>Loading crypto data...</p>
+            </div>
+
+            <div id="cryptoGrid" class="crypto-grid"></div>
+        </main>
+
+        <div id="coinModal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div id="modalBody" class="modal-body"></div>
+            </div>
+        </div>
+
+        <div id="toastContainer" class="toast-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
